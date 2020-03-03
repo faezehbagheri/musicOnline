@@ -1,0 +1,9 @@
+export const SIGN_UP = '/signup';
+export const SIGN_IN = '/signin';
+export const HOME = '/';
+export const PASSWORD_FORGET = '/pw-forget';
+export const TRACKS= '/tracks';
+export const ALBUM='/albums';
+export const MUSIC_VIDEO='/music-video';
+export const SINGER = '/singer';
+export const DETAILS_TRACKS= '/details-tracks'
