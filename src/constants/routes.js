@@ -6,4 +6,5 @@ export const TRACKS= '/tracks';
 export const ALBUM='/albums';
 export const MUSIC_VIDEO='/music-video';
 export const SINGER = '/singer';
+export const DETAILS_SINGER = '/details-singer';
 export const DETAILS_TRACKS= '/details-tracks'

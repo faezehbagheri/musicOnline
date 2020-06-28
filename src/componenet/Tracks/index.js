@@ -14,7 +14,7 @@ const useStyles = makeStyles(theme => ({
         width: "85%",
         margin: "2rem 3rem",
         cursor:'auto',
-        // backgroundColor: '#eeeeee'
+        backgroundColor: '#f5eff5'
     },
     details: {
         width: "78%",

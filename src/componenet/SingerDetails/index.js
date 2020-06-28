@@ -7,10 +7,13 @@ import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import Rating from '@material-ui/lab/Rating';
 import tracks from '../../assets/data';
+import singers from '../../assets/singer';
 import AudiotrackTwoToneIcon from '@material-ui/icons/AudiotrackTwoTone';
 import RelatedTracks from '../RelatedTracks'
 import AttachFileTwoToneIcon from '@material-ui/icons/AttachFileTwoTone';
 import PostAddIcon from '@material-ui/icons/PostAdd';
+import Singers from '../Singers';
+import Tracks from '../Tracks';
 
 
 const useStyles = makeStyles(theme => ({
@@ -58,7 +61,7 @@ const useStyles = makeStyles(theme => ({
     marginRight: '1.2rem',
   },
   paper: {
-    display: 'flex',
+    // display: 'flex',
     margin: "1rem 1rem",
     width: '93%',
     textAlign: 'right',
@@ -73,123 +76,54 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-function TracksDetails(props) {
+function SingersDetails(props) {
   const classes = useStyles();
   const [id , setId]=useState(Number(props.match.params.id))
-  const [singerId , setSingerId]=useState()
-  var i=1  
-
-  const isRelated = () => {   
-    tracks.map(t=>{
-      if(t.id === id){
-        setSingerId(t.singerId)
-      }
-    })
-  }
 
 
   useEffect(()=>{
-    isRelated()
+    // isRelated()
 
     console.log("detail"+ Number(props.match.params.id) )
     setId(Number(props.match.params.id))
   },[props.match.params.id])
   return (
     <>
-    {tracks.map(track =>{
-      if(track.id === id ){
+    {singers.map(singer =>{
+      if(singer.singerId === id ){
         return (
         <>
         <Card className={classes.root}>
         <CardContent>
-          <img src={track.img} className={classes.media} />
-          <div className={classes.content}>
-            <Typography gutterBottom variant="h5" component="h2">
-              {track.name} 
-              <AudiotrackTwoToneIcon />
+          <img src={singer.img} className={classes.media} />
+          <div >
+            <Typography gutterBottom variant="h5" component="h2" className={classes.content}>
+              {singer.singer} 
             </Typography>
-            <Typography variant="h5" color="textSecondary">
-              {track.singer}
+            <Typography variant="h6" className={classes.music}>
+                {singer.bio} 
             </Typography>
           </div>
           <br></br>
-          <div>
-            <Typography variant="h6" className={classes.music}>
-              پخش آنلاین آهنگ {track.name}
-            </Typography>
-            <audio
-              src={track.src}
-              type="audio/mp3"
-              controls
-              className={classes.audio}
-            />
-          </div>
-          <div>
-            <Typography variant="h6"  className={classes.textHeader}>
-        متن آهنگ {track.name}
-            </Typography>
-            <pre  className={classes.text}>
-              {track.txt}
-            </pre>
-          </div>
         </CardContent>
-      <CardActions>
-        <div className={classes.rating}>
-          <Rating name="half-rating" defaultValue={2.5} precision={0.5} />
-        </div>
-      </CardActions>
     </Card>
     <Card className={classes.root}>
           <CardContent>
           <div className={classes.related}>
               <Typography gutterBottom variant="h5" component="h5">
-                  پست های مرتبط 
-                  <AttachFileTwoToneIcon />
+                  آهنگ های {singer.singer}
+                <AudiotrackTwoToneIcon />
               </Typography>
               <hr />
           </div>
           <div className={classes.paper}>
             {
               tracks.map(t => {
-                if (t.singerId === singerId) {
-                  if(i<4){
-                    if(t.id !== id){
-                      i++;
-                      return <RelatedTracks id={t.id}  />
-                      
+                if (t.singerId === id) {
+                      return <Tracks  track={t}/>                      
                     }
-                  }
-                }
               })
             }
-          </div>
-          </CardContent>
-      </Card>
-      <Card className={classes.root}>
-          <CardContent>
-          <div className={classes.related}>
-              <Typography gutterBottom variant="h5" component="h5">
-                  نظرهای شما    
-                  <PostAddIcon/>
-              </Typography>
-              <hr />
-          </div>
-          <div className={classes.paper}>
-          {/* {props.user && 
-					<div >
-						<form  onSubmit={handleSubmit}>
-							<input type="text" name="message" id="message" value={message} onChange={handleChange} placeholder='Leave a message...' />
-						</form>
-
-						<Chatbox />
-					</div>
-				}
-          {!props.user && 
-					<div >
-						<p> to start chatting!</p>
-					</div>
-				} */}
-        {/* {props.user.displayName} */}
           </div>
           </CardContent>
       </Card>
@@ -201,4 +135,4 @@ function TracksDetails(props) {
     </>
   );
 }
-export default withRouter(TracksDetails)
+export default withRouter(SingersDetails)

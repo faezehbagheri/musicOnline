@@ -5,7 +5,10 @@ import { withFirebase } from '../Firebase';
 import { auth } from '../Firebase'
 import * as ROUTES from '../../constants/routes';
 import { makeStyles } from '@material-ui/core/styles';
-import Tracks from '../Tracks';
+import Tracks from '../Tracks'
+import SingersDetails from '../SingerDetails'
+import Singers from '../Singers'
+import singers from '../../assets/singer'
 import tracks from '../../assets/data';
 import TracksDetails from '../TracksDetails';
 import Sidebar from '../Sidebar';
@@ -45,6 +48,7 @@ const useStyles = makeStyles(theme => ({
 function DesktopTabs(props) {
   const classes = useStyles();
   const [listItem, setListItem] = useState([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+  const [list, setList] = useState([0, 1, 2, 3, 4, 5])
   const [page , setPage]=useState(1)
 
   const handleChange = (event, value) => {
@@ -73,7 +77,13 @@ function DesktopTabs(props) {
           </Route>
           <Route path={`${ROUTES.DETAILS_TRACKS}/:id`} >
             <TracksDetails/>
-          </Route>          
+          </Route>
+          <Route path={ROUTES.SINGER}>
+              <Singers  singer={singers} />
+          </Route> 
+          <Route path={`${ROUTES.DETAILS_SINGER}/:id`} >
+            <SingersDetails/>
+          </Route>         
         </div>
         <div className={classes.tabs}>
           <Sidebar page={page} />

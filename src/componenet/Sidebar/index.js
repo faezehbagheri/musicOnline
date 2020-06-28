@@ -9,7 +9,6 @@ import AudiotrackIcon from '@material-ui/icons/Audiotrack';
 import AlbumIcon from '@material-ui/icons/Album';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import PlayCircleFilledRoundedIcon from '@material-ui/icons/PlayCircleFilledRounded';
-import HeadsetIcon from '@material-ui/icons/Headset';
 import FaceIcon from '@material-ui/icons/Face';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 
