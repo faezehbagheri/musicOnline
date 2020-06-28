@@ -34,6 +34,22 @@ const footerStyle = {
         background: "transparent"
       },
     },
+    link: {
+      color: "#ffffff",
+      position: "relative",
+    //   padding: "0.9375rem",
+      fontWeight: "400",
+      fontSize: "12px",
+      textTransform: "uppercase",
+      borderRadius: "3px",
+      lineHeight: "20px",
+      textDecoration: "none",
+      margin: "0px",
+      display: "inline-flex",
+      "&:hover,&:focus": {
+        color: "#CC3333",
+      },
+    },
     email:{      
       color: "#ffffff",
       cursor: 'auto',

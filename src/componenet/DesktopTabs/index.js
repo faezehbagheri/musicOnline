@@ -58,6 +58,9 @@ function DesktopTabs(props) {
     setListItem(listitem)        
     props.history.push(`${ROUTES.TRACKS}/${value}`)
   }
+  useEffect(() => {
+    props.history.push(`${ROUTES.TRACKS}/1`)
+  },[])
   return (
     <div className={classes.root}>
       <Router>

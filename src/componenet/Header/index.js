@@ -80,7 +80,7 @@ export default function Header(props) {
             target="_blank"
             className={classes.navLink}
           >
-            <TelegramIcon/>
+            <a href='https://t.me/Faezehbagherii' className={classes.link}><TelegramIcon/></a>
           </Button>
         </Tooltip>
       </ListItem>
@@ -93,7 +93,7 @@ export default function Header(props) {
             target="_blank"
             className={classes.navLink}
           >
-            <InstagramIcon />
+            <a href='https://instagram.com/_faezehbagheri?igshid=j0t302p06zo5' className={classes.link}><InstagramIcon /></a>
           </Button>
         </Tooltip>
       </ListItem>

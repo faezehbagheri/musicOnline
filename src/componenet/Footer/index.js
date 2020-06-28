@@ -22,14 +22,14 @@ export default function Footer(props) {
       <ListItem className={classes.listItem}>
         <Tooltip title="Follow us on Telegram" >
           <Button color="transparent" target="_blank" className={classes.navLink} >
-            <TelegramIcon/>
+          <a href='https://t.me/Faezehbagherii' className={classes.link}><TelegramIcon/></a>
           </Button>
         </Tooltip>
       </ListItem>
       <ListItem className={classes.listItem}>
         <Tooltip title="Follow us on Instagram" >
           <Button color="transparent" target="_blank" className={classes.navLink} >
-            <InstagramIcon />
+          <a href='https://instagram.com/_faezehbagheri?igshid=j0t302p06zo5' className={classes.link}><InstagramIcon /></a>
           </Button>
         </Tooltip>
       </ListItem>

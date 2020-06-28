@@ -89,6 +89,14 @@ function Sidebar(props) {
                         </Link>
                     </li>
                     <li className={classes.list}>
+                        <Link to={ROUTES.SINGER} className={classes.link}>
+                            <Button className={classes.button} variant="outlined">
+                                <div className={classes.text}>خواننده</div>
+                                <AccountCircleIcon />
+                            </Button>
+                        </Link>
+                    </li>
+                    <li className={classes.list}>
                         <Link to={ROUTES.ALBUM} className={classes.link}>
                             <Button className={classes.button}  variant="outlined">
                                 <div className={classes.text}>آلبوم</div>
@@ -101,14 +109,6 @@ function Sidebar(props) {
                             <Button className={classes.button}  variant="outlined">
                                 <div className={classes.text}>موزیک ویدئو</div>
                                 <PlayCircleFilledRoundedIcon />
-                            </Button>
-                        </Link>
-                    </li>
-                    <li className={classes.list}>
-                        <Link to={ROUTES.SINGER} className={classes.link}>
-                            <Button className={classes.button} variant="outlined">
-                                <div className={classes.text}>خواننده</div>
-                                <AccountCircleIcon />
                             </Button>
                         </Link>
                     </li>
